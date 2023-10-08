@@ -56,6 +56,7 @@
     </div>
 
     <div class="mt-4">
+      <a class="btn btn-secondary" href="{{ route("admin.projects.index") }}">Indietro</a>
       <button type="submit" class="btn btn-primary">Invia</button>
     </div>
   </form>

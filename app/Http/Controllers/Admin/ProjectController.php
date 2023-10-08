@@ -13,7 +13,8 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() {
+    public function index()
+    {
         $projects = Project::all();
         return view('admin.projects.index', compact('projects'));
     }
@@ -38,14 +39,14 @@ class ProjectController extends Controller
 
         $counter = 0;
 
-        do{
+        do {
             $slug = Str::slug($data['title']) . ($counter > 0 ? '-' . $counter : '');
             $alredyExists = Project::where('slug', $slug)->first();
             $counter++;
         } while ($alredyExists);
 
         $data['slug'] = $slug;
-        
+
 
         // abbreviazione dei metodi: new, fill e save
         $project = Project::create($data);
@@ -93,12 +94,32 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id) {
+        if ($request->input('force')) {
+                $project = Project::omlyTrashed()->where('id', $id)->first();
+    
+                $project->forceDelete();
+            } else {
+                $project = Project::findOrFail($id);
+    
+                $project->delete();
+            }
+            return redirect()->route('admin.projects.index');
+    }
+}
+
+
+/**
+     * Remove the specified resource from storage.
+     */
+/*    public function destroy(Request $request, string $id)
     {
+        
+
         $project = Project::findOrFail($id);
 
         $project->delete();
 
         return redirect()->route('admin.projects.index');
     }
-}
+*/
