@@ -13,7 +13,7 @@
       <p>{{ $project->description }}</p>
       <p class="card-text">{{ 'language', implode(',', $project->language) }}</p>
       <div class="d-flex justify-content-between">
-        <a href="{{ $project->link }}" class="text-decoration-none">Allegati</a>
+        <a href="{{ $project->link }}" class="text-decoration-none">Link</a>
         <small class="text-center">{{ $project->creation_date->format('m/d/Y') }}</small>
       </div>
     </div>

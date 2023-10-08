@@ -55,6 +55,13 @@ Route::post('/admin/projects', [ProjectController::class, 'store'])->middleware(
 // READ
 Route::get('/admin/projects', [ProjectController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.projects.index');
 Route::get('/admin/projects/{project}', [ProjectController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.projects.show');
+
+// UPDATE
+Route::get('/admin/projects/{project}/edit', [ProjectController::class, 'edit'])->middleware(['auth', 'verified'])->name('admin.projects.edit');
+Route::put('/admin/projects/{project}', [ProjectController::class, 'update'])->middleware(['auth', 'verified'])->name('admin.projects.update');
+
+// DESTROY
+Route::delete('/admin/projects/{project}', [ProjectController::class, 'destroy'])->middleware(['auth', 'verified'])->name('admin.projects.destroy');
 */
 
 

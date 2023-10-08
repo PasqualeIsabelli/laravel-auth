@@ -32,7 +32,7 @@
 
       <div class="mb-3">
         <label for="creation_date" class="form-label">Data:</label>
-        <input type="text" name="creation_date" class="form-control @error('creation_date') is-invalid @enderror" value="{{ old('creation_date') }}">
+        <input type="date" name="creation_date" class="form-control @error('creation_date') is-invalid @enderror" value="{{ old('creation_date') }}">
         @error('creation_date')
           <div class="invalid-feedback">{{ $message }}</div>
         @enderror
