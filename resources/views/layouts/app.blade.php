@@ -46,6 +46,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.projects.index') }}">{{ __('My projects') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
