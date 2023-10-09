@@ -3,9 +3,9 @@
 
 @section('content')
   <div class="container">
-    <div class="row row-cols-6 gap-3 mt-4">
+    <div class="row row-cols-6 mt-4">
       @foreach ($projects as $project)
-        <a class="text-decoration-none" href="{{ route('admin.projects.show', $project->id) }}">
+        <a class="text-decoration-none" href="{{ route('admin.projects.show', $project->slug) }}">
           <div class="card">
             <img src="{{ $project['thumb'] }}" class="card-img-top">
             <div class="card-body">

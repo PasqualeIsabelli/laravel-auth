@@ -17,9 +17,9 @@
       </div>
     </div>
     <div class="d-flex gap-3 mt-4">
-      <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning">Modifica</a>
+      <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning">Modifica</a>
       <a class="btn btn-secondary" href="{{ route("admin.projects.index") }}">Indietro</a>
-      <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
+      <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger">Elimina</button>
