@@ -16,9 +16,11 @@
         <small class="text-center">{{ $project->creation_date->format('d/m/Y') }}</small>
       </div>
     </div>
-    <div class="d-flex gap-3 mt-4">
-      <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning">Modifica</a>
-      <a class="btn btn-secondary" href="{{ route("admin.projects.index") }}">Indietro</a>
+    <div class="d-flex gap-1 mt-4">
+      <div>
+        <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning">Modifica</a>
+        <a class="btn btn-secondary" href="{{ route("admin.projects.index") }}">Indietro</a>
+      </div>
       <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
         @csrf
         @method('DELETE')
