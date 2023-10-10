@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row row-cols-6 gap-3 mt-4">
       <div class="card border-0">
-        <img src="{{ $project['thumb'] }}" class="card-img-top">
+        <img src="{{ asset('storage/' . $project->thumb) }}" class="card-img-top">
       </div>
     </div>
     <div class="mt-3">

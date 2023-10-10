@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container">
-  <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST">
+  <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST" enctype="multipart/form-data">
     @csrf()
     @method('PUT')
 
@@ -23,12 +23,11 @@
         @enderror
     </div>
 
-    <div class="mb-3">
-      <label for="thumb" class="form-label">Immagine:</label>
-      <input type="text" name="thumb" class="form-control @error('thumb') is-invalid @enderror" value="{{ old('thumb', $project->thumb) }}">
-        @error('thumb')
-          <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+    <div class="input-group mb-3">
+      <input type="file" class="form-control @error('thumb') is-invalid @enderror" name="thumb" accept="image/*">
+      @error('thumb')
+        <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
     </div>
 
     <div class="mb-3">
