@@ -25,7 +25,6 @@ class UpdateProjectRequest extends FormRequest
             'title' => 'required|max:50',
             'description' => 'required|string',
             'thumb' => 'nullable|image|max:5120',
-            'thumb_link' => 'nullable|max:255',
             'creation_date' => 'required|date',
             'link' => 'required|string',
             'language' => 'required|string'
@@ -43,7 +42,6 @@ class UpdateProjectRequest extends FormRequest
             'title.max' => 'La lunghezza del titolo è di massimo 50 caratteri',
             'description.required' => 'La descrizione è obbligatoria',
             'thumb.max' => 'La dimensione massima dell\'immagine è di 5MB',
-            'thumb_link.max' => 'La lunghezza massima del link dell\'immagine è di 255 caratteri',
             'creation_date.required' => 'La data è obbligatoria',
             'link.required' => 'Il link è obbligatorio',
             'language.required' => 'La lingua è obbligatoria'
